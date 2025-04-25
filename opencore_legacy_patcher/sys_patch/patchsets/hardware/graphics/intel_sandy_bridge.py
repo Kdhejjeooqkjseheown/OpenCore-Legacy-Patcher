@@ -102,7 +102,7 @@ class IntelSandyBridge(BaseHardware):
 
         return {
             **NonMetal(self._xnu_major, self._xnu_minor, self._os_build).patches(),
-            **HighSierraGVA(self._xnu_major, self._xnu_minor, self._os_build).patches(),
+            **NonMetalEnforcement(self._xnu_major, self._xnu_minor, self._os_build).patches(),
             **MontereyWebKit(self._xnu_major, self._xnu_minor, self._os_build).patches(),
             **self._model_specific_patches(),
         }
